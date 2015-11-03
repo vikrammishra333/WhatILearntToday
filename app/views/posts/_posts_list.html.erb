@@ -1,0 +1,11 @@
+<div class="posts-list">
+  <h2>Latest Articles</h2>
+  <ul>
+    <% @posts.each do |post| %>
+      <li>
+        <h3><%= link_to post.title, post_path(post.id) %></h3>
+        <span class="date"><%= post.created_at.strftime('%B %d, %Y') %></span>
+      </li>
+    <% end %>
+  </ul>
+</div>

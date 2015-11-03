@@ -1,0 +1,16 @@
+<article id=<%= "post-#{@post.id}" %> class="post clearfix">
+  <header class="entry-header">
+    <h1 class="entry-title"><%= @post.title %></h1>
+  </header>
+  <div class="entry-content clearfix">
+    <%= @post.description.html_safe %>
+  </div>
+</article>
+
+<%= render :partial => "previous_and_next_post" %>
+<%= render :partial => "about_author", locals: {author: @post.author} %>
+
+<div id="comments" class="comments-area">
+  <%= render :partial => "comments/post_comments", comments: [] %>
+</div>
+

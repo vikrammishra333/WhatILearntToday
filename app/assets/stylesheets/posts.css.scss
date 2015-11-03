@@ -1,0 +1,91 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.posts-list {
+  h2 {
+    text-align: center;
+    font-size: 1.9em;
+    font-weight: normal;
+  }
+  ul {
+    list-style: none;
+    padding: .4em 0 2em 0;
+    li {
+      padding: 1.2em 0 .6em 0;
+      border-bottom: 1px dashed #ddd;
+    }
+    li::before, li::after {
+      content: " ";
+      display: table;
+    }
+    li::after {
+      clear: both;
+    }
+  }
+  a {
+    color: #444;
+  }
+  .date {
+    color: #aaa;
+    float: right;
+    font-family: "Open Sans", Georgia, serif;
+  }
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    float: left;
+    display: block;
+  }
+}
+
+article {
+  .entry-header {
+    text-align: center;
+  }
+}
+
+aside {
+  display: block;
+}
+
+.about-author {
+  padding: 2em 0;
+  .author-bio {
+    padding: 1em 0;
+    border: 1px dotted #ddd;
+    border-left: 0;
+    border-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.nav-single {
+  font-family: "Open Sans", Georgia, serif;
+  padding: 3em 0;
+  font-size: 1.1em;
+  h4 {
+    color: #aaa;
+  }
+  a {
+    color: #333;
+    border-bottom: 1px dotted #ccc;
+    text-decoration: none;
+  }
+  .meta-nav {
+    margin-right: .6em;
+  }
+  .nav-next {
+    text-align: right;
+    .meta-nav {
+      margin-left: .6em;
+      margin-right: 0;
+    }
+  }
+}
+
+.comments-area {
+  padding: 2em 0;
+}

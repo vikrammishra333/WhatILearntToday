@@ -1,0 +1,39 @@
+<h2>Change your password</h2>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, class: 'form-horizontal' }) do |f| %>
+  <%= field_set_tag 'Forgot your password?' do %>
+    <%= devise_error_messages! %>
+
+    <%= f.hidden_field :reset_password_token %>
+
+    <div class="control-group">
+      <%= f.label :password, "Password:", class: "control-label" %>
+
+      <div class="controls">
+        <%= f.password_field :password, autocomplete: "off", class: "input-xlarge" %>
+        <div class="inline-field-error">
+          <%= resource.errors.messages[:password].join(',') %>
+        </div>
+        <% if @minimum_password_length %>
+          <div style="clear:both;">(<%= @minimum_password_length %> characters minimum)</div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :password_confirmation, "Confirm Password:", class: "control-label" %>
+
+      <div class="controls">
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: "input-xlarge" %>
+        <div class="inline-field-error">
+          <%= resource.errors.messages[:password_confirmation].join(',') %>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit "Change my password", class: "btn btn-primary" %>
+    </div>
+
+  <% end %>
+<% end %>

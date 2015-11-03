@@ -1,0 +1,20 @@
+.form-horizontal {
+  .control-group {
+    .field_with_errors {
+      color: red;
+    }
+    .controls {
+      .field_with_errors {
+        margin-right: 10px;
+        float: left;
+        input {
+          border: 1px solid red;
+        }
+      }
+      .inline-field-error {
+        color: red;
+        padding-top: 5px;
+      }
+    }
+  }
+}

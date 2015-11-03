@@ -1,0 +1,17 @@
+<aside class="about-author">
+  <h3>ABOUT THE AUTHOR</h3>
+
+  <div class="row author-bio">
+    <div class="span2 author-img">
+    </div>
+
+    <div class="span10 author-info">
+      <h4 class="author-name">
+        <%= author.try(:name) %>
+      </h4>
+      <p>
+        <%= author.try(:info) %>
+      </p>
+    </div>
+  </div>
+</aside>

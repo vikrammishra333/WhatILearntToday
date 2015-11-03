@@ -1,0 +1,88 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'form-horizontal' }) do |f| %>
+  <%= field_set_tag 'Edit Profile' do %>
+    <%= devise_error_messages! %>
+
+    <div class="control-group">
+      <%= f.label :email, "Email:", class: "control-label" %>
+
+      <div class="controls">
+        <%= f.email_field :email, autofocus: true, class: "input-xlarge" %>
+        <div class="inline-field-error">
+          <%= resource.errors.messages[:email].join(',') %>
+        </div>
+      </div>
+    </div>
+
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
+
+    <div class="control-group">
+      <%= f.label :first_name, "First Name:", class: "control-label" %>
+
+      <div class="controls">
+        <%= f.email_field :first_name, class: "input-xlarge" %>
+        <div class="inline-field-error">
+          <%= resource.errors.messages[:first_name].join(',') %>
+        </div>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :last_name, "Last Name:", class: "control-label" %>
+
+      <div class="controls">
+        <%= f.email_field :last_name, class: "input-xlarge" %>
+        <div class="inline-field-error">
+          <%= resource.errors.messages[:last_name].join(',') %>
+        </div>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :password, "New Password:", class: "control-label" %>
+      <i>(leave blank if you don't want to change it)</i><br />
+
+      <div class="controls">
+        <%= f.password_field :password, autocomplete: "off", class: "input-xlarge" %>
+        <div class="inline-field-error">
+          <%= resource.errors.messages[:password].join(',') %>
+        </div>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :password_confirmation, "Confirm Password:", class: "control-label" %>
+
+      <div class="controls">
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: "input-xlarge" %>
+        <div class="inline-field-error">
+          <%= resource.errors.messages[:password_confirmation].join(',') %>
+        </div>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :current_password, "Current Password:", class: "control-label" %>
+      <i>(we need your current password to confirm your changes)</i><br />
+
+      <div class="controls">
+        <%= f.password_field :current_password, autocomplete: "off", class: "input-xlarge" %>
+        <div class="inline-field-error">
+          <%= resource.errors.messages[:current_password].join(',') %>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit "Update", class: "btn btn-primary" %>
+    </div>
+
+  <% end %>
+<% end %>
+
+<h3>Cancel my account</h3>
+
+<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+<%= link_to "Back", :back %>
